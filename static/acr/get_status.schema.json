@@ -21,42 +21,39 @@
       "description": "Modified timestamp of the job."
     },
     "outputs": {
-      "type": "array",
-      "minItems": 1,
-      "items" : {
-        "properties": {
-          "input": {
-            "type": "string",
-            "description": "The original input href.",
-            "example": "presigned_GET_URL"
-          },
-          "status": {
-            "type": "string",
-            "description": "The job status",
-            "enum": [
-              "pending",
-              "running",
-              "succeeded",
-              "failed"
-            ],
-            "example": "string"
-          },
-          "details": {
-            "type": "string",
-            "description": "Description of the exact error that is reported by the requested job. Will appear in the response only if there is an error."
-          },
-          "_links": {
-            "type": "object",
-            "properties": {
-              "self": {
-                "type": "object",
-                "properties": {
-                  "href": {
-                    "$ref": "inputs.schema.json#/definitions/href"
-                  },
-                  "storage": {
-                    "$ref": "inputs.schema.json#/definitions/storage"
-                  }
+      "type": "object",
+      "properties": {
+        "input": {
+          "type": "string",
+          "description": "The original input href.",
+          "example": "presigned_GET_URL"
+        },
+        "status": {
+          "type": "string",
+          "description": "The job status",
+          "enum": [
+            "pending",
+            "running",
+            "succeeded",
+            "failed"
+          ],
+          "example": "string"
+        },
+        "details": {
+          "type": "string",
+          "description": "Description of the exact error that is reported by the requested job. Will appear in the response only if there is an error."
+        },
+        "_links": {
+          "type": "object",
+          "properties": {
+            "self": {
+              "type": "object",
+              "properties": {
+                "href": {
+                  "$ref": "inputs.schema.json#/definitions/href"
+                },
+                "storage": {
+                  "$ref": "inputs.schema.json#/definitions/storage"
                 }
               }
             }

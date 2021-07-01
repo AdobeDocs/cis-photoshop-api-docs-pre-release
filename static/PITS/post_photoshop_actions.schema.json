@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "post_action_json.schema.json",
-  "title": "post_action_json",
-  "description": "Initiates an asynchronous job to play Photoshop Action JSON",
+  "$id": "post_photoshop_actions.schema.json",
+  "title": "post_photoshop_actions",
+  "description": "Initiates an asynchronous job to play Photoshop Actions",
   "type": "object",
   "required": [
     "inputs",
@@ -18,7 +18,12 @@
       "oneOf": [
         {
           "required": [
-            "actionJSON"
+            "actions"
+          ]
+        },
+        {
+          "required": [
+            "uxp"
           ]
         }
       ],

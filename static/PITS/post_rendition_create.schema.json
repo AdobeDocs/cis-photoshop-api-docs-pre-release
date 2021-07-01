@@ -7,11 +7,13 @@
   "required":["inputs","outputs"],
   "properties": {
     "inputs": {
-      "$ref":"file_input.schema.json#/definitions/input_objects_max_1",
-      "description":"An object describing an input file. Currently supported filetypes include:`jpeg`, `png`, `psd`, `tiff`. Current support is for files less than 1000MB."
+      "$ref":"file_input.schema.json#/definitions/input_objects_max_1"
     },
     "outputs": {
       "$ref":"file_output.schema.json#/definitions/output_objects"
+    },
+    "jobId": {
+      "type": "string"
     }
   }
 }

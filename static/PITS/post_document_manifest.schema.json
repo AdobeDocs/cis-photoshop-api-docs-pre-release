@@ -25,13 +25,16 @@
           ],
           "properties": {
             "type":{
-              "description": "Desired thumbnail format",
+              "description": "desired thumbnail format",
               "enum":["image/jpeg","image/png","image/tiff"],
               "type": "string"
             }
           }
         }
       }
+    },
+    "jobId": {
+      "type": "string"
     }
   }
 }

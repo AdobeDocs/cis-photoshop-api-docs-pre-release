@@ -16,13 +16,15 @@
       ],
       "properties": {
         "artboard": {
-          "$ref": "file_input.schema.json#/definitions/artboard_objects",
-          "description": "Contains an array of input objects"
+          "$ref": "file_input.schema.json#/definitions/artboard_objects"
         }
       }
     },
     "outputs": {
       "$ref": "file_output.schema.json#/definitions/output_objects"
+    },
+    "jobId": {
+      "type": "string"
     }
   }
 }

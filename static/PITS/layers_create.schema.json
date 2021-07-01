@@ -33,9 +33,6 @@
         "locked": {
           "$ref": "#/definitions/locked"
         },
-        "visible": {
-          "$ref": "#/definitions/locked"
-        },
         "mask": {
           "$ref": "#/definitions/mask"
         },
@@ -107,7 +104,7 @@
     },
     "adjustments": {
       "type": "object",
-      "description": "Supported adjustment layer attributes. Any of `brightnessContrast`, `exposure`, `hueSaturation` or `colorBalance` required",
+      "definition": "Supported adjustment layer attributes.",
       "minProperties": 1,
       "anyOf": [
         {
@@ -185,29 +182,23 @@
     },
     "locked": {
       "type": "boolean",
-      "description": "Is the layer locked",
-      "default": false
-    },
-    "visible": {
-      "type": "boolean",
-      "description": "Is the layer visible",
-      "default": true
+      "description": "is the layer editable"
     },
     "mask": {
       "type": "object",
       "minItems": 1,
-      "description": "Indicates this mask is applied or edited to this layer ",
+      "description": "indicates this mask is applied or edited to this layer ",
       "properties": {
         "input": {
           "$ref": "file_input.schema.json#/definitions/input_object"
         },
         "linked": {
           "type": "boolean",
-          "description": "Indicates a mask is linked to the layer or not"
+          "description": "indicates a mask is linked to the layer or not"
         },
         "enabled": {
           "type": "boolean",
-          "description": "Indicates a mask is enabled on that layer or not"
+          "description": "indicates a mask is enabled on that layer or not"
         },
         "offset": {
           "type": "object",
@@ -224,7 +215,7 @@
               ]
             }
           ],
-          "description": "Offset settings. Any of `x` or `y` is required",
+          "description": "offset settings",
           "properties": {
             "x": {
               "type": "integer",
@@ -249,11 +240,11 @@
     "smart_object": {
       "type": "object",
       "minItems": 1,
-      "description": "Indicates the attributes to create or edit a smart object layer",
+      "description": "indicates the attributes to create or edit a smart object layer",
       "properties": {
         "linked": {
           "type": "boolean",
-          "description": "Indicates if the smart object is a linked smart object or an embedded smart object",
+          "description": "indicates if the smart object is a linked smart object or an embedded smart object",
           "default": "false"
         }
       }
@@ -262,11 +253,10 @@
       "type": "object",
       "minItems": 1,
       "minProperties": 1,
-      "description": "Indicates the attributes to create or edit a fill layer",
+      "description": "indicates the attributes to create or edit a fill layer",
       "properties": {
         "solidColor": {
           "type": "object",
-          "description": "An object describing the solid color fill for this fill layer. Currently supported mode is RGB only.",
           "minProperties": 1,
           "anyOf": [
             {
@@ -327,7 +317,6 @@
     },
     "type": {
       "type": "string",
-      "description": "The layer type",
       "enum": [
         "layer",
         "textLayer",
@@ -336,7 +325,25 @@
         "smartObject",
         "fillLayer",
         "backgroundLayer"
-      ]
+      ],
+      "properties": {
+        "linked": {
+          "type": "boolean",
+          "description": "indicates if the smart object is a linked smart object or an embedded smart object",
+          "default": "false"
+        },
+        "type": {
+          "description": "desired image format for the smart object. 'image/vnd.adobe.photoshop' specifies a PSD file",
+          "enum": [
+            "image/jpeg",
+            "image/png",
+            "image/tiff",
+            "image/vnd.adobe.photoshop",
+            "vnd.adobe.photoshop"
+          ],
+          "type": "string"
+        }
+      }
     },
     "blendOptions": {
       "type": "object",

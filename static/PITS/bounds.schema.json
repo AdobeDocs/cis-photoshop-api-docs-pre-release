@@ -7,7 +7,6 @@
     "bounds":{
       "type": "object",
       "minProperties": 1,
-      "description": "The bounds of the layer. Any of `height`, `left`, `top`, `width` is required",
       "anyOf": [
         {"required": ["height"]},
         {"required": ["width"]},

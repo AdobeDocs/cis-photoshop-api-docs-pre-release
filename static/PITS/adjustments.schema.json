@@ -6,7 +6,7 @@
   "definitions": {
     "brightness_contrast":{
       "type":"object",
-      "description":"Brightness and contrast settings",
+      "description":"brightness and contrast settings",
       "minProperties": 1,
       "anyOf": [
         {"required": ["brightness"]},
@@ -15,23 +15,21 @@
       "properties":{
         "brightness":{
           "type":"integer",
-          "description":"The adjustmentLayer's brightness",
+          "description":"the adjustmentLayer's brightness",
           "minimum":-150,
-          "maximum":150,
-          "default": 0
+          "maximum":150
         },
         "contrast":{
           "type":"integer",
-          "description":"The adjustmentLayer's contrast",
+          "description":"the adjustmentLayer's contrast",
           "minimum":-150,
-          "maximum":150,
-          "default": 0
+          "maximum":150
         }
       }
     },
     "exposure":{
       "type":"object",
-      "description":"Exposure settings",
+      "description":"exposure settings",
       "minProperties": 1,
       "anyOf": [
         {"required": ["exposure"]},
@@ -41,21 +39,21 @@
       "properties":{
         "exposure":{
           "type":"number",
-          "description":"The layer's exposure",
+          "description":"the layer's exposure",
           "default":0,
           "minimum":-20,
           "maximum":20
         },
         "offset":{
           "type":"number",
-          "description":"The layer's offset.",
+          "description":"the layer's offset.",
           "default":0,
           "minimum":-0.5,
           "maximum":0.5
         },
         "gammaCorrection":{
           "type":"number",
-          "description":"The layer's gammaCorrection.",
+          "description":"the layer's gammaCorrection.",
           "default":1,
           "minimum":0.01,
           "maximum":9.99
@@ -64,7 +62,7 @@
     },
     "hue_saturation":{
       "type":"object",
-      "description":"Hue and saturation settings",
+      "description":"hue and saturation settings",
       "minProperties": 1,
       "anyOf": [
         {"required": ["colorize"]},
@@ -73,13 +71,12 @@
       "properties":{
         "colorize":{
           "type":"boolean",
-          "description":"Colorize",
-          "default": false
+          "description":"colorize"
         },
         "channels":{
           "type":"array",
           "minItems":1,
-          "description":"An array of hashes representing the 'master' channel (the remaining five channels of 'magentas', 'yellows', 'greens', etc are not yet supported)",
+          "description":"an array of hashes representing the 'master' channel (the remaining five channels of 'magentas', 'yellows', 'greens', etc are not yet supported)",
           "items":{
             "type":"object",
             "anyOf": [
@@ -98,20 +95,17 @@
               "hue":{
                 "type":"integer",
                 "minimum":-180,
-                "maximum":180,
-                "default": 0
+                "maximum":180
               },
               "saturation":{
                 "type":"integer",
                 "minimum":-100,
-                "maximum":100,
-                "default": 0
+                "maximum":100
               },
               "lightness":{
                 "type":"integer",
                 "minimum":-100,
-                "maximum":100,
-                "default": 0
+                "maximum":100
               }
             }
           }
@@ -120,7 +114,7 @@
     },
     "color_balance":{
       "type":"object",
-      "description":"Color balance settings",
+      "description":"color balance settings",
       "minProperties": 1,
       "anyOf": [
         {"required": ["preserveLuminosity"]},
@@ -135,7 +129,7 @@
         },
         "shadowLevels":{
           "type":"array",
-          "description":"Array of 3 ints",
+          "description":"array of 3 ints",
           "items":{
             "type":"integer",
             "minimum":-100,
@@ -146,7 +140,7 @@
         },
         "midtoneLevels":{
           "type":"array",
-          "description":"Array of 3 ints",
+          "description":"array of 3 ints",
           "items":{
             "type":"integer",
             "minimum":-100,
@@ -157,7 +151,7 @@
         },
         "hightoneLevels":{
           "type":"array",
-          "description":"Array of 3 ints",
+          "description":"array of 3 ints",
           "items":{
             "type":"integer",
             "minimum":-100,
